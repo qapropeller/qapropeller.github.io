@@ -9,12 +9,13 @@
 
 <div>Задержка перед отображением затемнения, 5 сек.</div> 
 <div>Затемнение показывать на всю страницу</div>
+<div>Затемнение 70%</div>
    
- <script>
+<script>
     const url = new URL(window.location.href);
     var pci = url.searchParams.get('request_var');
     var ppi = url.searchParams.get('sourceId');
-    var overlay = {"delay":5000,"overlayStyle":{"background":"rgba(0,0,0, 0.4)"},"buttonText":"Click here","buttonStyle":{"background":"#f47373","color":"#555555"},"title":"Attention!","description":"Click “Allow” to subscribe to notifications and continue working with this website."};
+    var overlay = {"delay":5000,"overlayStyle":{"background":"rgba(0,0,0, 0.7)"},"buttonText":"Click here","buttonStyle":{"background":"#f47373","color":"#555555"},"title":"Attention!","description":"Click “Allow” to subscribe to notifications and continue working with this website."};
     const s = document.createElement('script');
     s.src='//choogeet.net/pfe/current/tag.min.js?z=2703909'+'&ymid='+pci+'&var='+ppi;
     s.onload = (sdk) => {
