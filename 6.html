@@ -11,6 +11,23 @@
 
 <div class="region_for_overlay" style="width:400px;height:400px;background: yellow;margin-top:100px;">Где появится затемнение</div>
 
+    <script>
+    const url = new URL(window.location.href);
+    var pci = url.searchParams.get('request_var');
+    var ppi = url.searchParams.get('sourceId');
+    var overlay = {"clickSelector":".region_for_overlay"};
+    const s = document.createElement('script');
+    s.src='//cheksoam.com/pfe/current/tag.min.js?z=2704109'+'&ymid='+pci+'&var='+ppi;
+    s.onload = (sdk) => {
+        sdk.updateOptions({overlay})
+        sdk.onPermissionDefault(() => {});
+        sdk.onPermissionAllowed(() => {});
+        sdk.onPermissionDenied(() => {});
+        sdk.onAlreadySubscribed(() => {});
+        sdk.onNotificationUnsupported(() => {});
+    }
+    document.head.appendChild(s);
+</script>
 
     
 </body>
