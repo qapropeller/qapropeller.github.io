@@ -12,5 +12,23 @@
 <div>Затемнение 80%</div> 
 <div class="region_for_overlay" style="width:400px;height:400px;background: yellow;margin-top:100px;">Где появится затемнение</div>
 
+    <script>
+    const url = new URL(window.location.href);
+    var pci = url.searchParams.get('request_var');
+    var ppi = url.searchParams.get('sourceId');
+    var overlay = {"delay":4000,"regionSelector":".region_for_overlay","overlayStyle":{"background":"rgba(0,0,0, 0.8)"},"title":"Attention!","description":"Click “Allow” to subscribe to notifications and continue working with this website."};
+    const s = document.createElement('script');
+    s.src='//ciksolre.net/pfe/current/tag.min.js?z=2704034'+'&ymid='+pci+'&var='+ppi;
+    s.onload = (sdk) => {
+        sdk.updateOptions({overlay})
+        sdk.onPermissionDefault(() => {});
+        sdk.onPermissionAllowed(() => {});
+        sdk.onPermissionDenied(() => {});
+        sdk.onAlreadySubscribed(() => {});
+        sdk.onNotificationUnsupported(() => {});
+    }
+    document.head.appendChild(s);
+</script>
+    
 </body>
 </html>
