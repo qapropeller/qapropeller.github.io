@@ -2,7 +2,19 @@
 <head>
 
     <title>Example №5</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     
+    <script type="text/javascript">
+        var removed = undefined;
+        
+        function remove(){
+            if(removed === undefined){
+                $("#video_frame").css("pointer-events","");
+                removed = true;
+            }
+        }
+    
+    </script>
 </head>
 <body>
 <h1 style="padding-top:150px">После нажатия на элемент показывается пуш вместе с затемнением </h1>
@@ -11,7 +23,7 @@
 <div>Затемнение показывать на всей странице</div>
 <div>Затемнение 75%</div> 
 <div class="region_for_overlay"  style="margin-top:50px;width:560;height:315;" >
-    <iframe style="pointer-events:none" width="560" height="315" src="https://www.youtube.com/embed/Jb6042qONf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="video_frame" style="pointer-events:none" width="560" height="315" src="https://www.youtube.com/embed/Jb6042qONf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
     </div>    
 
